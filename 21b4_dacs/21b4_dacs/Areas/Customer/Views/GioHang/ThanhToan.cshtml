@@ -1,0 +1,130 @@
+﻿@model GioHangViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main_container {
+            margin:150px 0;
+        }
+
+        .list-group-item{
+            padding:14px 0;
+        }
+        .input_thanhtoan{
+            margin-bottom:12px;
+            padding:8px 0;
+        }
+        .btn_thanhtoan{
+            padding:4px 12px;
+            float: right;
+            background-color: rgb(255, 218, 145);
+        }
+    </style>
+</head>
+<body>
+
+    <main role="main" class="main_container">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="needs-validation" name="frmthanhtoan" method="post" action="ThanhToan">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
+
+                        <div class="py-5 text-center">
+                            <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+                            <h2>Thanh toán</h2>
+                            <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-muted" style="font-size: 1.8rem;">Giỏ hàng</span>
+                                </h4>
+
+                                <ul class="list-group mb-3">
+                                    <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
+                                    <input type="hidden" name="sanphamgiohang[1][gia]" value="11800000.00">
+                                    <input type="hidden" name="sanphamgiohang[1][soluong]" value="2">
+                                    @foreach (var item in Model.DsGioHang)
+                                    {
+                                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                            <div style="padding: 0 4px;">
+                                                <h6 class="my-0" style="font-size: 1.4rem;">@item.SanPham.Name</h6>
+                                                <small class="text-muted" style=" font-size: 1.3rem;">@String.Format("{0:0,0}", @item.SanPham.PriceSale) VND x @item.Quantity</small>
+                                            </div>
+                                            <span class="text-muted" style="padding: 0 4px;font-size: 1.3rem; display: flex;flex-flow: column-reverse;">@String.Format("{0:0,0}", @item.ProductPrice) VND</span>
+                                        </li>
+                                    }
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span style="font-size: 1.4rem; font-weight:500; padding-left: 4px;">Tổng thành tiền</span>
+                                        <strong style="font-size: 1.3rem; font-weight:500; padding-right: 4px;"> @String.Format("{0:0,0}", Model.HoaDon.Total) VND</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-lg-9">
+                        <h2 class="checkout-title">CHI TIẾT ĐẶT HÀNG</h2>
+                        <!-- End .checkout-title -->
+                        <form asp-controller="GioHang" asp-action="ThanhToanSubmit" asp-area="Customer" method="post">
+                            <label style="font-size: 1.4rem;">Tên *</label>
+                            <input asp-for="HoaDon.Name" type="text" class="form-control input_thanhtoan" required >
+
+                            <label style="font-size: 1.4rem;">Địa Chỉ *</label>
+                            <input asp-for="HoaDon.Address" type="text" class="form-control input_thanhtoan" placeholder="Số nhà, phường, quận, ..." required>
+
+                            <label style="font-size: 1.4rem;">Số Điện Thoại *</label>
+                            <input asp-for="HoaDon.PhoneNumber" type="text" type="tel" class="form-control input_thanhtoan" required>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label style="font-size: 1.4rem;">Thành Phố</label>
+                                    <input type="text" class="form-control input_thanhtoan" required>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label style="font-size: 1.4rem;">
+                                        Quốc Gia</label>
+                                    <input type="text" class="form-control input_thanhtoan" required>
+                                </div>
+                            </div>
+
+                            <div class="payment-method">
+                                <span style="font-size: 1.4rem; font-weight:500;">Hình thức thanh toán:</span>
+                                <div class="form-check">
+                                    <input type="hidden" name="paymentMethod" value="" id="paymentMethodInput">
+                                    <input style="font-size: 1.4rem;" class="form-check-input" type="radio" asp-for="HoaDon.Paymentmethod" value="ship-cod" id="shipCod" required>
+                                    <label class="form-check-label" style="font-size: 1.4rem;" for="shipCod">Thanh Toán Khi Nhận Hàng</label>
+                                </div>
+                                @*Chưa làm*@
+                                @*<div class="form-check">
+                                    <input style="font-size: 1.4rem;" class="form-check-input" type="radio" asp-for="HoaDon.Paymentmethod" value="vn-pay" id="vnpay">
+                                    <label class="form-check-label" style="font-size: 1.4rem;" for="vnpay">Thanh Toán Bằng VN Pay</label>
+                                </div>*@
+                            </div>
+
+                            <input type="submit" style="font-size: 1.4rem;" value="Đặt Hàng" class="btn_thanhtoan" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelectorAll('.form-check-input').forEach(function(radioButton) {
+            radioButton.addEventListener('change', function() {
+                document.getElementById('paymentMethodInput').value = this.value;
+            });
+        });
+    </script>
+</body>
+</html>
+
+

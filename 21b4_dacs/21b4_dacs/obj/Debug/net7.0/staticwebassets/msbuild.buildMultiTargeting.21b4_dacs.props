@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\21b4_dacs.props" />
+</Project>

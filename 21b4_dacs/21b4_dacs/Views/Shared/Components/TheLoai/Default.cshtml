@@ -1,0 +1,33 @@
+﻿@model List<WebApplication1.Models.TheLoaiLv2>
+
+
+
+<li class="header_option-category-item container_saparate-tablet container_saparate-mobile" style="display: flex;justify-content: space-around;">
+    @foreach (var group in Model.GroupBy(x => x.TheLoai.Id))
+    {
+        var theLoaiName = group.First().TheLoai.Name;
+        <span style="display: block;">
+
+            <a asp-area="Customer" asp-controller="Home" asp-action="TimKiem" asp-route-cate2="@theLoaiName" id="categoryDropdownToggle" class="header_option-category-link">
+                <span>@theLoaiName</span>
+                <i class="header_option-title-icon-right fa-solid fa-angle-right hide-on-pc"></i>
+            </a>
+            <div class="dropdown-list">
+                <ul class="header_menu-dropdown" style="padding-left:0;">
+                    @foreach (var item in group)
+                    {
+                        <li class="header_menu-dropdown-list">
+                            <a asp-area="Customer" asp-controller="Home" asp-action="TimKiem" asp-route-cate1="@item.Name" class="header_menu-dropdown-item">@item.Name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </span>
+        
+    }
+</li>
+
+
+
+
+

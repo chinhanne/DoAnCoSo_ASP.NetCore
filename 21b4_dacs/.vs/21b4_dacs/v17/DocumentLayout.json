@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|c:\\users\\admin\\desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\areas\\admin\\views\\sanpham\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|solutionrelative:21b4_dacs\\areas\\admin\\views\\sanpham\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|c:\\users\\admin\\desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|solutionrelative:21b4_dacs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|c:\\users\\admin\\desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\migrations\\20240510150134_dacs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|solutionrelative:21b4_dacs\\migrations\\20240510150134_dacs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|c:\\users\\admin\\desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|solutionrelative:21b4_dacs\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|c:\\users\\admin\\desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|solutionrelative:21b4_dacs\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|c:\\users\\admin\\desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5747DD4-0C91-4CB5-B150-90FC6E0D6551}|21b4_dacs\\21b4_dacs.csproj|solutionrelative:21b4_dacs\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240510150134_dacs.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Migrations\\20240510150134_dacs.cs",
+              "RelativeDocumentMoniker": "21b4_dacs\\Migrations\\20240510150134_dacs.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Migrations\\20240510150134_dacs.cs",
+              "RelativeToolTip": "21b4_dacs\\Migrations\\20240510150134_dacs.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T15:01:34.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Admin\\Views\\SanPham\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "21b4_dacs\\Areas\\Admin\\Views\\SanPham\\Upsert.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Admin\\Views\\SanPham\\Upsert.cshtml",
+              "RelativeToolTip": "21b4_dacs\\Areas\\Admin\\Views\\SanPham\\Upsert.cshtml",
+              "ViewState": "AQIAAD0AAAAACjIzMzPrv1kAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-10T14:44:33.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "21b4_dacs\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "21b4_dacs\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAmwHwAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T06:14:13.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Logout.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "RelativeDocumentMoniker": "21b4_dacs\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "RelativeToolTip": "21b4_dacs\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T06:10:08.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "21b4_dacs\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "21b4_dacs\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAuwCIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T05:59:18.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\appsettings.json",
+              "RelativeDocumentMoniker": "21b4_dacs\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\21b4_dacs (1)\\21b4_dacs\\21b4_dacs\\appsettings.json",
+              "RelativeToolTip": "21b4_dacs\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-05T05:54:43.471Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

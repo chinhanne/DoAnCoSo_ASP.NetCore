@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .home_product-item-addcart:hover {
+            background-color: #e15a5a;
+        }
+
+        .home_product-item-addcart {
+            background-color: #df2e2e;
+        }
+
+        .main_container {
+            padding-top: 250px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Container -->
+    <div class="main_container">
+        <div class="grid container">
+            <div class=" row container_product">
+                <div class="tabslider_header">
+                    <div class="tabslider_header-title">
+                        <div class="tabslider_header-title-icon">
+                            <img src="~/assets/image/icon_hoathinh.png" alt="Icon hoạt hình">
+                        </div>
+                        <span>@ViewBag.TitleTK</span>
+                    </div>
+                </div>
+                <div class="home_product">
+                    <div class="grid container text-center">
+                        <div class="row">
+                            @if (ViewBag.SanPhamTimKiem != null && ViewBag.SanPhamTimKiem.Count > 0)
+                            {
+                                @foreach (var item in ViewBag.SanPhamTimKiem)
+                                {
+
+                                    <div class="home_product-list col-lg-3 col-md-4 col-sm-6">
+                                        <div class="home_product-item">
+                                            <a asp-action="Details" asp-route-sanphamId="@item.Id" style="text-decoration: none;">
+                                                <div class="home_product-item-img">
+                                                    <img src="@item.ImageUrl" alt="Ảnh sách" style="width:200px; height:200px;">
+                                                </div>
+                                                <h4 class="home_product-item-name">@item.Name</h4>
+                                                <div class="home_product-item-price">
+                                                    <span class="home_product-item_price-old">@item.Price.ToString("#,##0 đ") </span>
+                                                    <span class="home_product-item_price-current">@item.PriceSale.ToString("#,##0 đ")</span>
+                                                </div>
+                                            </a>
+                                            <div class="home_product-item-cart">
+                                                <a type="submit" class="product-item" href="/Customer/GioHang/Insert/@item.Id" style="text-decoration:none">
+                                                    <span class="home_product-item-addcart" style="width: 140px;padding: 6px;border-radius: 12px;color: #fff;font-size: 1.4rem;">
+
+                                                        <i class="fa-solid fa-cart-shopping" style="padding: 0 4px;"></i>Thêm giỏ hàng
+
+                                                    </span>
+                                                </a>
+
+                                            </div>
+                                            <div class="home_product-item_safe-label">
+                                                <span class="home_product-item_label">@item.Title</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                        }else{
+                           
+                              <p class="h3 mt-2">Không tìm thấy sản phẩm nào!!</p>
+                            
+                        }
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

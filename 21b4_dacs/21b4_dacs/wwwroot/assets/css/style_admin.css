@@ -1,0 +1,257 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.admin_contain {
+    display: flex;
+    width: 100%;
+    background-color: rgb(187, 187, 187, 0.5);
+}
+
+.admin_left {
+    width: 20%;
+    background-color: rgb(104, 175, 250);
+    margin-right: 30px;
+    padding: 30px;
+}
+
+.admin_right {
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+.admin_left_logo {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.admin_left_logo h1 {
+    padding: 10px;
+
+}
+
+.admin_left_logo i {
+    padding: 30px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+
+.admin_left_nav {
+
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.admin_left_nav_home h2 {
+    margin-top: 10px;
+}
+
+.admin_left_nav_home_menu {
+  animation-name: slideInFromLeft;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+    margin-left: 40px;
+
+}
+
+.admin_left_nav_home_menu i {
+    font-size: large;
+    margin-top: 22px;
+    font-weight: 1000;
+}
+
+.admin_left_nav_home_menu i:hover {
+    color: white;
+}
+
+/* admin_right */
+.admin_right {
+    width: 80%;
+    background-color: whitesmoke;
+    display: flex;
+    /* justify-content: center; Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+.admin_right_content{
+    width: 100%;
+}
+.ACTIONS{
+  display: none;
+}
+.admin_right_layout {
+    align-items: center;
+    justify-items: center;
+    padding: 30px;
+}
+
+.admin_right_top {
+    margin: 30px;
+}
+
+.admin_right_middle {
+    padding: 20px;
+    margin: 0 auto;
+}.admin_right_layout_infor {
+    margin-top: 20px;
+  }
+  
+  .admin_right_top {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  .admin_right_top h2 {
+    margin: 0;
+  }
+  
+  .admin_right_middle label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .admin_right_middle input[type="text"],
+  .admin_right_middle input[type="tel"],
+  .admin_right_middle input[type="email"],
+  .admin_right_middle input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .admin_right_middle button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin_right_layout_category {
+    margin-top: 20px;
+  }
+  
+  .admin_right_layout_category table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin_right_layout_category th,
+  .admin_right_layout_category td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin_right_layout_category th {
+    background-color: #f2f2f2;
+  }
+  
+  .admin_right_layout_category button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin_right_layout_product {
+    margin-top: 20px;
+  }
+  
+  .admin_right_layout_product table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin_right_layout_product th,
+  .admin_right_layout_product td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin_right_layout_product th {
+    background-color: #f2f2f2;
+  }
+  
+  .admin_right_layout_product img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .admin_right_layout_product button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin_right_layout_product button.edit-button {
+    background-color: #2196F3;
+  }
+  
+  .admin_right_layout_product button.delete-button {
+    background-color: #F44336;
+  }
+  .admin_right_layout_user_content{
+    display: flex;
+    width: 60%;
+    height: 540px;
+    background-color: #f2f2f2;  
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  .admin_right_layout_user_content_left {
+    width: 25%;
+    margin: 30px;
+    background-color: whitesmoke;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  
+  .admin_right_layout_user_content_left i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+  }
+
+  .admin_right_layout_user_content_right{
+    width: 70%;
+    margin: 40px 30px;
+    justify-content: space-between;   
+  }
+  .admin_right_layout_user_content_right .USER{
+    width: 90%;
+    height: 50px;
+    background-color: white;
+    margin-bottom: 50px;
+  } 
+  .admin_right_layout_user_content_right .content{
+    padding: 10px;
+    margin: 30px;
+  }
+  
+
+  

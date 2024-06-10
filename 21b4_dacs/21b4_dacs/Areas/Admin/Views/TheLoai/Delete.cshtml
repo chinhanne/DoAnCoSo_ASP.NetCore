@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Share/_LayoutAdmin.cshtml";
+}
+
+
+@model TheLoai
+<div class="container">
+    <h3>Xóa thể loại</h3>
+    <form method="post" asp-action="DeleteConfirm">
+        <input asp-for="Id" type="hidden" />
+        <div class="form-group">
+            <label asp-for="Name">Tên thể loại</label>
+            <input asp-for="Name" type="text" disabled class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="DateCreated">Ngày tạo</label>
+            <input asp-for="DateCreated" type="date" disabled class="form-control" />
+            <span asp-validation-for="DateCreated" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a asp-action="index" class="btn btn-secondary">Hủy</a>
+
+    </form>
+</div>
+
+@* @section Scripts{
+    <script src="~/lib/jquery-validation/dist//jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+} *@

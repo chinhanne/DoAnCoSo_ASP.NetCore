@@ -1,0 +1,93 @@
+﻿@model IEnumerable<SanPham>
+@{
+    Layout = "~/Areas/Admin/Views/Share/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="container">
+    <h2 class="ltext-105 cl0 mt-5 text-center">
+        Trang Quản lý Sản phẩm
+    </h2>
+    
+    <table id="myTable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Tên Sách</th>
+                <th>Giá</th>
+             
+                <th>Ảnh</th>
+               
+                <th>Giá Giảm</th>
+                <th>Tiêu Đề</th>
+                <th>Tác Giả</th>
+                
+                <th>Ngày tạo</th>
+                <th>Ngày cập nhật</th>
+                <th>Thể loại Level2</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody style="margin-top: 200px;">
+            @if(Model != null){
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+
+                        <td><img src="@item.ImageUrl" alt="Product Image" style="width: 100px; height:100px" /></td>
+
+                        <td>@item.PriceSale</td>
+                        <td>@item.Title</td>
+                        <td>@item.Tacgia</td>
+
+                        <td>@item.DateCreated</td>
+                        <td>@item.DateUpdated</td>
+                        <td>@item.TheLoaiLv2.Name</td>
+                        <td>
+                            <a asp-action="Upsert" asp-route-id="@item.Id">Edit</a> |
+                            <a class="text-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                        </td>
+                    </tr>
+
+                }
+            }
+            else
+            {
+                 <tr>
+                    <td colspan="10">Không có sản phẩm</td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+    <a asp-controller="SanPham" asp-action="Upsert" class="btn btn-primary">Thêm mới</a>
+    
+</div>
+@section scripts {
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "lengthMenu": "Hiển thị _MENU_ dòng mỗi trang",
+                    "zeroRecords": "Không tìm thấy kết quả",
+                    "info": "Hiển thị _START_ đến _END_ trong tổng _TOTAL_ dòng",
+                    "infoEmpty": "Không có dữ liệu",
+                    "infoFiltered": "(được lọc từ tổng số _MAX_ dòng)",
+                    "search": "Tìm kiếm:",
+                    "paginate": {
+                        "first": "Đầu",
+                        "last": "Cuối",
+                        "next": "Tiếp",
+                        "previous": "Trước"
+                    }
+                }
+            });
+        });
+    </script>
+    }

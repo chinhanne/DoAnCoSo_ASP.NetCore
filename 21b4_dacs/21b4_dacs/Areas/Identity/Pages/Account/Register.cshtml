@@ -1,0 +1,48 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "ĐĂNG KÝ";
+}
+
+<div class="container slider" style="margin: 200px 0">
+
+    <h1 style="margin-top:150px; text-align:center; width:100vw;">@ViewData["Title"]</h1>
+
+    <div class="row" style="justify-content:center; width:100vw;">
+        <div class="col-md-6">
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h2 style="text-align:center;">Tạo tài khoản mới</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Name" class="form-control" autocomplete="username" aria-required="true" placeholder="name" style="font-size: 20px;height: 52px;padding-top: 16px;" />
+                    <label asp-for="Input.Name">Name</label>
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="font-size: 20px;height: 52px;padding-top: 16px;" />
+                    <label asp-for="Input.Email">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="font-size: 20px;height: 52px;padding-top: 16px;" />
+                    <label asp-for="Input.Password">Mật khẩu</label>
+
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="font-size: 20px;height: 52px;padding-top: 16px;" />
+                    <label asp-for="Input.ConfirmPassword">Nhập lại mật khẩu</label>
+
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Đăng ký</button>
+            </form>
+        </div>
+       
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

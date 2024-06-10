@@ -1,0 +1,216 @@
+:root {
+    --header-color: rgb(255, 218, 145);
+    --primary-color: #f8f6f0;
+    --tabslider-color: #edd8b369;
+}
+
+* {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    /* 100%  = 16px => 62.5% = 10px -------- 1rem = 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.main {
+    overflow: hidden;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+/*-------Produce-detail---------*/
+
+html {
+    /* 100%  = 16px => 62.5% = 10px -------- 1rem = 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.row-product
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product{
+    padding:  0;
+    background-color: var(--primary-color);
+}
+.product-middle{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-top{
+    margin: 0 12px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container .product-top .row{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.product-content-left
+{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-content-left-big-img
+{   
+    width: 80%;
+    padding-right: 20px;
+   
+}
+.product-content-left-big-img img{
+    width:100%;
+    height: 500px;
+}
+.product-content-left-small-img{
+    width: 20%;
+}
+.product-content-left-small-img img{
+    width: 100%;
+    height: 125px;
+}
+.product-content-left-buy button{
+    display: inline-block;  
+    align-items: center;
+    width: 31%;
+    height: 30px;
+    margin: 30px;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+div.product-content-right{
+    width: 50%;
+    background-color: orange;
+    margin-left: 20px;
+}
+.product-content-ringht-product-detail {
+    font-size: 3rem;
+    margin: 8px;
+}
+.product-content-ringht-product-detail {
+    font-size: 3rem;
+    margin: 8px;
+}
+.product-content-ringht-product-detail h1{
+    font-size: 6rem;
+}
+.fa-solid.fa-tag:hover{
+    color:red;
+}
+.product-content-ringht-product-detail a {
+    text-decoration: none;
+}
+.product-content-ringht-product-detail strike{
+    animation-name: product;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+}
+
+.product-content-right-product-bottom-content-tacgia {
+    padding-bottom: 40px;
+}
+
+@keyframes product {
+    from{
+    color: rgb(223, 52, 52) ;
+    }
+    to{
+        color: rgb(0, 0, 0);
+    }
+}
+.product-content-right-product-quanlity{
+    margin-left:12px; 
+    font-size: 1.5rem;
+}
+.product-content-right-product-quanlity input{
+    font-size: 1.5rem;
+    width: 40px;
+    border-radius: 10px;
+}
+.product-content-right-product-buton button{
+    display: inline-block;  
+    justify-content: center;
+    align-items: center;
+    width: 31%;
+    height: 35px;
+    margin: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+
+}
+.product-content-right-product-buton {
+    margin-left: 8px;
+}
+.product-content-right-product-buton button.buy {
+    background-color: rgb(230, 15, 15);
+}
+.product-content-right-product-buton button.addtocart{
+    background-color: rgb(24, 168, 24);
+}
+.product-content-right-product-buton button.buy:hover{
+    background-color: rgb(230, 15, 15);
+    color: white;
+}
+.product-content-right-product-buton button.addtocart:hover{
+    background-color: rgb(24, 168, 24);
+    color: white;
+}
+.product-content-right-product-bottom{
+    padding-top: 20px;
+    position: relative;
+}
+.product-content-right-product-bottom-top {
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: translateX(-3%);
+}
+.product-content-right-product-bottom-title{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.product-content-right-product-bottom-title-item{
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 6px;
+    font-size: 1.5rem ;
+}
+.product-content-right-product-bottom-content{
+    padding-top: 20px;
+    font-size: 1.5rem;
+
+}
+.active-b{
+    display: none;
+}
+@media (max-width:740px) {
+    .product-middle{
+        flex-direction: column;
+        font-size: medium;
+    } 
+    .product-content-ringht-product-detail h1{
+        font-size: 3.5rem;
+    }
+    .product-content-ringht-product-detail{
+        font-size: medium;
+    }
+}

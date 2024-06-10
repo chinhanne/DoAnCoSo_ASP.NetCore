@@ -1,0 +1,19 @@
+﻿@model List<WebApplication1.Models.TheLoaiLv2>
+
+<div id="click-menu-cate" style="display: none;">
+    @foreach (var a in Model.GroupBy(x => x.TheLoai.Id))
+    {
+        var theLoaiNameMobile = a.First().TheLoai.Name;
+        <a href="#" onclick="toggleDropdown(event)" class="mobile_category-link" style="align-items: center;">
+            @theLoaiNameMobile&#x25BE;
+        </a>
+        <ul class="dropdowm_mobile-category">
+            @foreach (var item in a)
+            {
+                <li class="mobile_category-item">
+                    <a asp-area="Customer" asp-controller="Home" asp-action="TimKiem" asp-route-cate1="@item.Name">@item.Name</a>
+                </li>
+            }
+        </ul>
+    }
+</div>

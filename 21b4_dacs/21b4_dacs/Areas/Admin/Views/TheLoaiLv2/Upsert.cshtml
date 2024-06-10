@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Share/_LayoutAdmin.cshtml";
+}
+@model TheLoaiLv2
+<div class="container" style="padding-top:200px;" >
+    <h3>Thêm thể loại Level2</h3>
+    <form asp-action="Upsert">
+        <div class="form-group">
+            <label asp-for="Name">Tên thể loại</label>
+            <input asp-for="Name" type="text" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+        </div>
+        @if(Model.Id == 0)
+        {
+            <div class="form-group">
+                <label asp-for="DateCreated">Ngày tạo</label>
+                <input asp-for="DateCreated" type="date" disabled class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+
+            </div>
+        }
+        else
+        {
+            <div class="form-group">
+                <label asp-for="DateUpdated ">Ngày cập nhật</label>
+                <input asp-for="DateUpdated " type="date" disabled class="form-control" />
+                <span asp-validation-for="DateUpdated " class="text-danger"></span>
+
+            </div>
+        }
+
+       
+
+        <div class="form-group">
+            <label asp-for="TheLoaiId">Thể Loại lớn</label>
+            <select asp-for="TheLoaiId" asp-items="@ViewBag.DSTheLoai" class="form-control">
+                <option disabled>Chọn thể loại</option>
+            </select>
+            <span asp-validation-for="TheLoaiId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">@(Model.Id == 0 ? "Tạo mới" : "Cập nhật")</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
+

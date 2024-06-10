@@ -1,0 +1,110 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    double totalPrice = 0;
+}
+@model GioHangViewModel
+<!-- Container -->
+    <div class="path grid">
+        <span><a href="/Customer/Home/Index">Trang chủ</a> ></span>
+        <span class="path_here">
+            <a href="/Customer/GioHang" style="color: rgb(255, 218, 145)">Giỏ hàng</a>
+        </span>
+    </div>
+    <div class="grid shopping_color">
+        <div class="row shopping_cart" style="margin-top: 100px">
+            <div class="shopping_cart-table ">
+                <table>
+                    <thead class="shopping_cart-table-head shopping_cart-table-head-bottom shopping_cart-saparate">
+                        <tr>
+                            <th class="shopping_product col-2">Hình Ảnh</th>
+                            <th class="shopping_price col-2">Tên sản phẩm</th>
+                            <th class="shopping_quantity hide-on-min-mobile col-2">Giá</th>
+                            <th class="shopping_quantity hide-on-min-mobile col-2">Số lượng</th>
+                            <th class="shopping_total col-2">Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody class="shopping_cart-table-body">
+                    @if (Model.DsGioHang != null && Model.DsGioHang.Any())
+                        {
+                            @foreach (var item in Model.DsGioHang)
+                            {
+                                totalPrice += item.ProductPrice;
+                                <tr>
+
+
+                                    <td class="shopping_cart-item">
+                                        <img src="@item.SanPham.ImageUrl" alt="Ảnh sản phẩm">
+                                    </td>
+                                    <td class="product-name-col">
+                                        <h5>
+                                            <a style="text-decoration:none; color: #333;" href="@Url.Action("Details", "SanPham", new { id = @item.SanPham.Id })">@item.SanPham.Name</a>
+                                        </h5>
+                                    </td>
+
+                                    <td class="shopping_cart-price">
+                                        @String.Format("{0:0,0}", @item.SanPham.PriceSale) VND
+                                    </td>
+                                    <td class="shopping_cart-quantity hide-on-min-mobile">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <a asp-action="Giam" asp-route-giohangId="@item.Id" type="button" style="text-decoration:none; color: #333;">
+                                                    <i class="dec qtybtn">-</i>
+                                                </a>
+                                                <input type="text" value="@item.Quantity">
+                                                <a asp-action="Tang" asp-route-giohangId="@item.Id" type="button" style="text-decoration:none; color: #333;">
+                                                    <i class="inc qtybtn">+</i>
+                                                </a>
+
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shopping_cart-total">
+                                        @String.Format("{0:0,0}", item.ProductPrice) VND
+                                    </td>
+                                    <td class="shopping_cart-item-close">
+                                        <a asp-action="Xoa" asp-route-giohangId="@item.Id" style="color:#333;">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                    }else{
+                        <p class="h3 mt-2">Giỏ hàng trống</p>                       
+                    }
+                </tbody>
+                </table>
+                <br />
+            </div>
+            <div class="col-lg-12">
+                <div class="shopping_btn-cart shopping_btn-cart-borderTop shopping_cart-btn-saparate">
+                    <a href="/Customer/Home/Index" class="primary-btn cart-continue-btn">TIẾP TỤC MUA SẮM</a>
+                    <a href="#" class="primary-btn cart-update-btn">CẬP NHẬT GIỎ HÀNG</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                  
+                <div class="shopping_checkout shopping_checkout-background">
+                    <h5>Tổng tiền giỏ hàng:</h5>
+                    <ul>
+                        <li>
+                            Tạm tính
+                        <span> @String.Format("{0:0,0}", @totalPrice) VND</span>
+                        </li>
+                        <li>
+                            Tổng tiền
+                        <span> @String.Format("{0:0,0}", @totalPrice) VND</span>
+                        </li>
+                    </ul>
+                @if (Model.DsGioHang != null && Model.DsGioHang.Any())
+                {
+                    <a asp-action="ThanhToan" class="primary-btn-pay">Thanh toán</a>
+                }
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

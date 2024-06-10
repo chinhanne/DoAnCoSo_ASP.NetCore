@@ -1,0 +1,140 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model GioHang
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/assets/css/style_detail.css" />
+    <link rel="stylesheet" href="~/assets/js/script_prdouct_detail.js" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .btn-hover:hover {
+            background-color: #e15a5a;
+        }
+
+        .btn-hover {
+            background-color: #df2e2e;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div class="main_container-detail" style="margin: 220px 0 100px 0;">
+            <div class="grid container">
+                <div class=" container_product">
+                    <!-- Detail_product -->
+                    <section class="product">
+                        <div class="container-detail">
+                            <div class="product-top ">
+                                <p>
+                                    <a asp-area="Customer" asp-controller="Home" asp-action="Index" style="text-decoration:none;color:#333; font-weight: 500;">Trang chủ</a> >
+                                </p>
+
+                                <p>
+                                    <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" style="text-decoration:none;color:#333;font-weight: 500;">Sản phẩm</a> >
+                                </p>
+
+                                <p>
+                                    <a href="#" style="color: rgb(255, 218, 145);text-decoration:none;font-weight: 500;">@Model.SanPham.Name</a>
+                                </p>
+                            </div>
+
+                            <div class="product-middle row">
+
+                                <div class="product-content-left col l-6 m-6 c-12">
+                                    <div class="product-content-left-big-img">
+                                        <img src="@Model.SanPham.ImageUrl" alt="Ảnh sách" />
+
+                                    </div>
+                                    <div class="product-content-left-small-img">
+
+                                        <img src="@Model.SanPham.ImageUrl1" alt="Ảnh sách">
+                                        <img src="@Model.SanPham.ImageUrl2" alt="Ảnh sách">
+                                        <img src="@Model.SanPham.ImageUrl3" alt="Ảnh sách">
+                                        <img src="@Model.SanPham.ImageUrl4" alt="Ảnh sách">
+                                    </div>
+
+                                </div>
+                                <div class="product-content-ringht col l-6 m-6 c-12">
+                                    <div class="product-content-ringht-product-detail">
+                                        <h1 style="font-size:2.5rem;">@Model.SanPham.Name <i class="fa-solid fa-tag"></i></h1>
+                                        <p style ="font-size:1.8rem; color: #333;">
+                                            Tác giả:<span><a style="font-size:1.8rem; color: #333;" href="#">@Model.SanPham.Tacgia</a></span>
+                                        </p>
+
+                                        <p><span style="font-size:1.8rem; color: #333;">Thể loại: @Model.SanPham.TheLoaiLv2.Name</span></p>
+                                        <span style="font-size:1.8rem; color: #333;"> Giá: <strike> @Model.SanPham.Price.ToString("#,##0 đ") </strike></span>  <span style ="font-size:1.8rem; color: #333; padding-left:6px;">@Model.SanPham.PriceSale.ToString("#,##0 đ")</span>
+
+                                        <!-- <span class="describe" style="font-size: 2rem;"><h2 style="font-size: 3rem;">Nội dung: </h2>Nội dung series kể về cuộc đời của cậu bé Nobita và chú mèo máy Doraemon từ tương lai đến để giúp cuộc sống của cậu bé trở nên tốt hơn. Tác phẩm ba lần được chuyển thể thành anime: lần đầu do Nippon TV Dōga sản xuất gồm 52 tập phát sóng trên Nippon TV từ 1 tháng 4 đến 30 tháng 9 năm 1973, lần thứ hai do Shin-Ei Animation sản xuất với 1787 tập phát từ 2 tháng 4 năm 1979 đến 18 tháng 3 năm 2005 trên TV Asahi và lần thứ ba cũng do Shin-Ei Animation sản xuất phát trên TV Asahi từ 15 tháng 4 năm 2005 đến nay. Tác phẩm cũng được chuyển thể thành các loại hình truyền thông khác như phim điện ảnh và trò chơi điện tử.</span>        -->
+                                    </div>
+
+                                    <div class="product-content-right-product-buton">
+
+                                        <a asp-area="Customer" asp-controller="GioHang" type="submit" asp-route-id="@Model.SanPham.Id" asp-action="Insert" class="btn btn-hover" style="border: 1px solid #ccc;padding: 8px 48px;font-size: 1.4rem;color: #fff;">Thêm giỏ hàng<i style="padding: 0 6px;" class="fa-solid fa-cart-shopping"></i></a>
+                                    </div>
+                                    <div class="product-content-right-product-bottom">
+                                        <div class="product-content-right-product-bottom-top">
+                                            <i class="fa-solid fa-circle-down"></i>
+                                        </div>
+                                        <div class="product-content-right-product-bottom-big">
+                                            <div class="product-content-right-product-bottom-title row-product ">
+                                                <div class="product-content-right-product-bottom-title-item tacgia" id="tacgia">
+                                                    <p>Tác giả: @Model.SanPham.Tacgia</p>
+                                                </div>
+
+                                                <div class="product-content-right-product-bottom-title-item noidung" id="noidung" >
+                                                    <p>Nội dung:</p>
+                                                </div>
+                                            </div>
+                                            <div class="product-content-right-product-bottom-content">
+                                               
+                                                <div class="product-content-right-product-bottom-content-noidung" style="display:block;">
+                                                    <span>
+                                                        <h1 style="font-size:1.8rem; color: #333;">@Model.SanPham.Name:</h1>
+                                                        @Html.Raw(@Model.SanPham.Decription)
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+     
+        const bigImg = document.querySelector(".product-content-left-big-img img")
+        const smallImg = document.querySelectorAll(".product-content-left-small-img img");
+        smallImg.forEach(function (imgItem, x) {
+            imgItem.addEventListener("click", function () {
+                bigImg.src = imgItem.src;
+            })
+        }
+        )
+       
+        const bottom = document.querySelector(".product-content-right-product-bottom-top")
+        if (bottom) {
+            bottom.addEventListener("click", function () {
+                document.querySelector(".product-content-right-product-bottom-big").classList.toggle("active-b");
+            })
+        }
+
+    </script>
+   @* <script src="~/assets/js/script_prdouct_detail.js"></script>*@
+</body>
+</html>
+
+
+
+

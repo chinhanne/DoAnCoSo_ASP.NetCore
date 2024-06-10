@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Share/_LayoutAdmin.cshtml";
+}
+@model IEnumerable<ChiTietHoaDon>
+<div class="container" style="padding: 200px 0 100px 0;">
+
+    <table id="myTable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Sản Phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Tổng tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null && Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.HoaDon.Name</td>
+                        <td>@item.SanPham.Name</td>
+                        <td><img width="100px" height="150px" src="@item.SanPham.ImageUrl" /></td>
+                        <td>@item.SanPham.Price</td>
+                        <td>@item.ProductPrice</td>
+
+                    </tr>
+                }
+            }
+            else
+            {
+                <p class="h3 mt-2">Không có chi tiết hóa đơn nào!</p>
+            }
+
+        </tbody>
+    </table>
+    <a class="btn btn-primary" asp-controller="DonHang" asp-action="Index">Trở về</a>
+</div>
+
+@section scripts {
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "lengthMenu": "Hiển thị _MENU_ dòng mỗi trang",
+                    "zeroRecords": "Không tìm thấy kết quả",
+                    "info": "Hiển thị _START_ đến _END_ trong tổng _TOTAL_ dòng",
+                    "infoEmpty": "Không có dữ liệu",
+                    "infoFiltered": "(được lọc từ tổng số _MAX_ dòng)",
+                    "search": "Tìm kiếm:",
+                    "paginate": {
+                        "first": "Đầu",
+                        "last": "Cuối",
+                        "next": "Tiếp",
+                        "previous": "Trước"
+                    }
+                }
+            });
+        });
+    </script>
+    }

@@ -1,0 +1,216 @@
+﻿@model IEnumerable<SanPham>
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .home_product-item-addcart:hover {
+            background-color: #e15a5a;
+        }
+
+        .home_product-item-addcart {
+            background-color: #df2e2e;
+        }
+
+        .slider-background {
+            background-color: var(--primary-color);
+        }
+
+        .slider_content-right {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slider_content-right-img {
+            border-radius: 4px;
+        }
+
+        .slider-padding{
+            padding-top:30px;
+        }
+
+        .slider-background-pd {
+            padding-top: 24px;
+        }
+
+        .btn-fullScreen {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-fullScreen-a:hover {
+            background-color: #e5d5d6;
+        }
+
+        .btn-fullScreen-a {
+            text-decoration: none;
+            color: #C92127;
+            font-size: 1.8rem;
+            border: 2px solid #C92127;
+            padding: 5px 50px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .slider_content-right-img{
+            max-width:100%;
+        }
+
+        .padd-left {
+            padding-left:4px;
+        }
+
+        .padd-right {
+            padding-right:4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-background slider-background-pd container">
+        <div class="slider">
+            <div class="slider_content  col-12" style="transition:300ms ease-in 0s">
+                <img id="slider-show" class="slider_content-img" src="~/assets/image/Slider1.jpg" alt="Ảnh sách">
+            </div>
+           
+        </div>
+    </div>
+
+
+    <div class="slider-background slider-padding grid container">
+        <div class="slider_content-right">
+            <div class="slider_content-right-content ">
+                <img class="slider_content-right-img padd-right" src="~/images/Banner1.jpg" alt="Ảnh sách">
+            </div>
+            <div class="slider_content-right-content ">
+                <img class="slider_content-right-img" src="~/images/Banner2.jpg" alt="Ảnh sách">
+            </div>
+            <div class="slider_content-right-content ">
+                <img class="slider_content-right-img  padd-left" src="~/images/Banner3.jpg" alt="Ảnh sách">
+            </div>
+            <div class="slider_content-right-content ">
+                <img class="slider_content-right-img  padd-left" src="~/images/Banner4.png" alt="Ảnh sách">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Container -->
+    <div class="main_container">
+        <div class="grid container">
+            <div class=" row container_product">
+                <div class="tabslider_header">
+                    <div class="tabslider_header-title">
+                        <div class="tabslider_header-title-icon">
+                            <img src="~/assets/image/icon_hoathinh.png" alt="Icon hoạt hình">
+                        </div>
+                        <span>Sản phẩm nổi bật</span>
+                    </div>
+                </div>
+                <div class="home_product">
+                    <div class="grid container text-center">
+                        <div class="row d-flex justify-content-center mt-2">
+                            @if (Model != null && Model.Any())
+                            {
+                                @foreach (var item in @Model)
+                                {
+
+                                    <div class="home_product-list col-lg-3 col-md-4 col-sm-6">
+                                        <div class="home_product-item">
+                                            <a asp-action="Details" asp-route-sanphamId="@item.Id" style="text-decoration: none;">
+                                                <div class="home_product-item-img">
+                                                    <img src="@item.ImageUrl" alt="Ảnh sách" style="width:200px; height:200px;">
+                                                </div>
+                                                <h4 class="home_product-item-name">@item.Name</h4>
+                                                <div class="home_product-item-price">
+                                                    <span class="home_product-item_price-old">@item.Price.ToString("#,##0 đ") </span>
+                                                    <span class="home_product-item_price-current">@item.PriceSale.ToString("#,##0 đ")</span>
+                                                </div>
+                                            </a>
+                                            <div class="home_product-item-cart">
+                                                <a type="submit" class="product-item" href="/Customer/GioHang/Insert/@item.Id" style="text-decoration:none">
+                                                    <span class="home_product-item-addcart" style="width: 140px;padding: 6px;border-radius: 12px;color: #fff;font-size: 1.4rem;">
+
+                                                        <i class="fa-solid fa-cart-shopping" style="padding: 0 4px;"></i>Thêm giỏ hàng
+
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="home_product-item_safe-label">
+                                                <span class="home_product-item_label">@item.Title</span>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                }
+                            }else{
+                                <p class="h3 mt-2">Không có sản phẩm nào!</p>
+                            }
+                        </div>
+                    </div>
+                    <div class="btn-fullScreen">
+                        <a asp-area="Customer" asp-controller="SanPham" asp-action="Index" class="btn-fullScreen-a">Xem thêm</a>
+                    </div>
+                </div>
+
+
+               
+            </div>
+            <div class=" row container_product">
+                <div class="home_product-label">
+
+                    <div class="grid container  text-center ">
+                        <div class="row ">
+                            <div class="home_product-item-lable col-lg-2 col-md-4 col-sm-6">
+                                <a class="home_product-item-lable-img" href="#">
+                                    <img src="~/assets/image/img1.png" alt="Ảnh Nhà sách">
+                                </a>
+                            </div>
+
+                            <div class="home_product-item-lable col-lg-2 col-md-4 col-sm-6">
+                                <a class="home_product-item-lable-img" href="#">
+                                    <img src="~/assets/image/img2.png" alt="Ảnh Nhà sách">
+                                </a>
+                            </div>
+
+                            <div class="home_product-item-lable col-lg-2 col-md-4 col-sm-6">
+                                <a class="home_product-item-lable-img" href="#">
+                                    <img src="~/assets/image/img3.png" alt="Ảnh Nhà sách">
+                                </a>
+                            </div>
+
+                            <div class="home_product-item-lable col-lg-2 col-md-4 col-sm-6">
+                                <a class="home_product-item-lable-img" href="#">
+                                    <img src="~/assets/image/img4.png" alt="Ảnh Nhà sách">
+                                </a>
+                            </div>
+
+                            <div class="home_product-item-lable col-lg-2 col-md-4 col-sm-6">
+                                <a class="home_product-item-lable-img" href="#">
+                                    <img src="~/assets/image/img5.png" alt="Ảnh Nhà sách">
+                                </a>
+                            </div>
+
+                            <div class="home_product-item-lable col-lg-2 col-md-4 col-sm-6">
+                                <a class="home_product-item-lable-img" href="#">
+                                    <img src="~/assets/image/img6.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,433 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Sách Online</title>
+    <link rel="stylesheet" href="~/assets/css/style.css"/>
+    <link rel="stylesheet" href="~/assets/css/base.css"/>
+    <link rel="stylesheet" href="~/assets/css/reponsive.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/assets/fonts/fontawesome-free-6.5.1/fontawesome-free-6.5.1/css/all.min.css"/>
+    <style>
+        .header_option-category-label {
+            position: absolute;
+            right: 47px;
+            top: 2px;
+            animation: fadeIn ease-in 0.2s;
+        }
+        .header_option-category-item {
+            display: block;
+        }
+
+        .Category {
+            background-color: #fff;
+            margin-top: 66px;
+            border-radius: 4px;
+        }
+
+        .title_vanhoc {
+            font-size: 1.4rem;
+            padding-left: 12px;
+            font-weight: 500;
+        }
+
+        .tittle_category {
+            font-size: 1.5rem;
+            padding: 12px 0 0 8px;
+            font-weight: 500;
+        }
+
+        .Category_list {
+            padding-bottom: 12px;
+        }
+
+        .Category_list_item {
+            list-style: none;
+        }
+
+        .Category_list_item {
+            font-size: 1.5rem;
+        }
+
+        .scroll_section {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.4rem;
+            list-style: none;
+        }
+
+        .path span a {
+            font-size: 1.2rem;
+            padding: 12px 0 0 0;
+            font-weight: 500;
+        }
+
+        .path {
+            padding: 12px 0 0 0;
+            margin-bottom: 24px;
+        }
+
+        .path_here {
+            color: var(--header-color);
+        }
+
+        .path span a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .home_product-list button:hover {
+            color: #ccc;
+        }
+
+        .cate-li {
+            font-size: 1.5rem;
+            font-weight: 500;
+           
+        }
+
+        .dropdowm_mobile-category {
+            padding: 0 15px;
+        }
+
+        .mobile_category-item a{
+            text-decoration:none;
+            color:#333;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        
+        .mobile_category-link {
+            justify-content: center;
+            padding-right: 20px;
+        }
+
+        .main {
+            background-color: #f8f6f0;
+        }
+
+        .cate-li {
+            list-style: none;
+            padding-top: 8px;
+            cursor: pointer;
+        }
+
+        .mobile_category-list-ul {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .cate-li a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+  
+</head>
+<body>
+    <div class="main">
+        <!-- Header -->
+
+
+        <header class="header">
+            <!-- Header_top -->
+            <div class="header_top">
+                <div class="grid text-center">
+                    <div class="header_navbar">
+                        <ul class="header_navbar-list">
+                            <li class="header_navbar-item-title">NHÀ SÁCH ONLINE 21B4</li>
+                            <li>
+                                <div class="header_logo hide-on-pc hide-on-mobile hide-on-tablet header_logo-on-small">
+                                    <a href="/Customer/Home/Index"><img src="~/assets/image/logoNhom.png" alt="Logo Nhà sách 21B4" class="header_logo-img"></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="header_navbar-list">
+                            <partial name="_LoginPartial" />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- header_content -->
+            <div class="header_content ">
+                <div class="grid text-center">
+                    <div class="header_option">
+                        <div class="header_logo">
+                            <a href="/Customer/Home/Index"><img src="~/assets/image/logoNhom.png" alt="Logo Nhà sách 21B4" class="header_logo-img"></a>
+                        </div>
+                        <div class="header_option-menu">
+                            <label for="mobile-menu-checkbox" class="header_menu-mobile hide-on-pc ">
+                                <i id="mobile-menu-icon" class="header_menu-mobile-icon fa-solid fa-list" onclick="toggleMobileMenu()"></i>
+                            </label>
+                            <div class="header_option-title ">
+                                <input type="checkbox" hidden id="tablet-menu-checkbox" class="menu-bars-checkbox-level1-tablet">
+                                <!-- <input type="checkbox" hidden id="mobile-menu-checkbox" class="menu-bars-checkbox-level1-mobile"> -->
+                                <ul class="header_option-title-list">
+                                    <li class="header_option-title-item container_saparate-tablet container_saparate-mobile">
+                                        <a href="/Customer/Home/Index" class="header_option-title-link">TRANG CHỦ</a>
+                                    </li>
+                                    <li class="header_option-title-item container_saparate-tablet container_saparate-mobile">
+                                        <a href="/Customer/SanPham/Index" class="header_option-title-link">SẢN PHẨM</a>
+                                    </li>
+                                    <div class="header_option-title-category">
+                                        <li class="header_option-title-item container_saparate-tablet container_saparate-mobile" id="menu2">
+                                            <a href="#" class="header_option-title-link header_option-title-link-Cate">
+                                                THỂ LOẠI
+                                                <i class="header_option-title-icon-down fa-solid fa-chevron-down "></i>
+                                                <i class="header_option-title-icon-right fa-solid fa-angle-right hide-on-pc"></i>
+                                            </a>
+                                        </li>
+                                        <div class="header_option-category">
+                                            <ul class="header_option-category-label">
+                                                <span class="header_option-title-category">
+
+                                                
+                                                @await Component.InvokeAsync("TheLoai")
+                                                </span>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                    <div class="header_mobile_category hide-on-pc hide-on-tablet" id="mobile-menu">
+                            <div class="mobile_category-list">
+                                <ul class="mobile_category-list-ul">
+                                <li class="cate-li"><a class="mobile_category-list-headerNoPc" href="/Customer/Home/Index"><span>Trang chủ</span></a></li>
+                                        <div>
+                                            <li id="click-cate" class="cate-li">
+                                                <span class="mobile_category-list-headerNoPc">
+                                                    Thể loại
+                                                    <i class=" fa-solid fa-chevron-down "></i>
+                                                </span>
+                                            </li>
+                                            @await Component.InvokeAsync("TheLoaiMobile")
+                                           
+                                        </div>
+                                    <li class="cate-li">
+                                        <a class="mobile_category-list-headerNoPc" href="/Customer/SanPham/Index">
+                                            <span>Sản phẩm</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                <form asp-area="Customer" asp-controller="Home" asp-action="TimKiem" >
+                        <div class="header_search">
+                            
+                                <div class="header_search-input-wrap">
+                                
+                                    <input name="tk" type="text" class="header_search-input" placeholder="Nhập để tìm kiếm">
+                                
+                                </div>
+                                <button type="submit" class="header_search-btn">
+                                    <i class="header_search-btn-search fa-solid fa-magnifying-glass"></i>
+                                </button>
+                          
+                        </div>
+                </form>
+                        <div class="header_cart">
+                            <ul class="header_cart-list">
+                                <li class="header_cart-item">
+                                    <a href="/Customer/GioHang" class="header_cart-link">
+                                        <i class="fa-solid fa-cart-shopping header_cart-icon"></i>
+                                        <vc:count-gio-hang></vc:count-gio-hang>
+                                        <vc:count-cart-mobile></vc:count-cart-mobile>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        @RenderBody()
+
+        <footer class="footer">
+            <div class="footer_content container">
+                <div class="row text-content">
+                    <div class="footer_content-introduce col-lg-3 col-md-4 col-sm-6">
+                        <h4 class="footer_content-heading">LIÊN HỆ</h4>
+                        <p class="footer_content-address">
+                            Địa chỉ:
+                            <span>Quận 9, Thành phố Hồ Chí Minh.</span>
+                        </p>
+                        <p class="footer_content-hotline">
+                            Hotline:
+                            <span>0123 456 789</span>
+                        </p>
+                        <p class="footer_content-email">
+                            Email:
+                            <span>21b4book@gmail.com</span>
+                        </p>
+                        <span class="footer_content-icon">
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-pinterest"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="footer_content-catetogy col-lg-3 col-md-4 col-sm-6">
+                        <h4 class="footer_content-heading">DANH MỤC</h4>
+                        <p class="footer_content-category-item">
+                            <a href="/Customer/Home/Index">Trang chủ</a>
+                        </p>
+                        <p class="footer_content-category-item">
+                            <a href="/Customer/SanPham/Index">Sản phẩm</a>
+                        </p>
+                        <p class="footer_content-category-item">
+                            <a href="#">Thể loại</a>
+                        </p>
+                       
+                    </div>
+                    <div class="footer_content-endow col-lg-3 col-md-4 col-sm-6">
+                        <h4 class="footer_content-heading">ƯU ĐÃI</h4>
+                        <p class="footer_content-endow-item">
+                            Miễn phí ship
+                        </p>
+                        <p class="footer_content-endow-item">
+                            Giao hàng nhanh
+                        </p>
+                        <p class="footer_content-endow-item">
+                            Nhiều mã giảm giá
+                        </p>
+                        <p class="footer_content-endow-item">
+                            Chính hãng 100%
+                        </p>
+                    </div>
+                    <div class="footer__content-map col-lg-3 col-md-4 col-sm-12">
+                        <h4 class="footer_content-heading ">BẢN ĐỒ</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4206985418705!2d106.78253487570396!3d10.855572157727538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSFVURUNIIC0gxJDhuqFpIGjhu41jIEPDtG5nIG5naOG7hyBUUC5IQ00gKFRodSBEdWMgQ2FtcHVzKQ!5e0!3m2!1svi!2s!4v1710833878496!5m2!1svi!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // click menu cate
+        var cateClick = document.getElementById("click-cate");
+        var clickCateMenu = document.getElementById("click-menu-cate");
+
+        // Xử lý sự kiện onclick
+        cateClick.onclick = function () {
+            if (clickCateMenu.style.display === "none") {
+                clickCateMenu.style.display = "block";
+            } else {
+                clickCateMenu.style.display = "none";
+            }
+        };
+
+            //    Slide auto show
+        var img = document.getElementById("slider-show");
+        var imgarr = ["/assets/image/Slider1.jpg", "/assets/image/Slider2.jpg", "/assets/image/Slider3.jpg", "/assets/image/Slider4.jpg"];
+        var i = 0;
+        function slideShowAuto() {
+            img.setAttribute("src", imgarr[i]);
+            // img.style.transition = "0.2";
+            i++;
+            if (i == imgarr.length) {
+                i = 0;
+            }
+        }
+
+        setInterval(slideShowAuto, 2000);
+
+        
+
+    
+        // Scroll den the loai
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var links = document.querySelectorAll('a[href^="#"]');
+
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', scrollToSection);
+            }
+
+            function scrollToSection(e) {
+                e.preventDefault();
+
+                var target = this.getAttribute('href');
+                var section = document.querySelector(target);
+
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        //============================================
+        // Lấy tham chiếu đến các phần tử cần sử dụng
+        var loginLink = document.getElementById("loginLink");
+        var loginPopup = document.getElementById("loginPopup");
+
+        // Xử lý sự kiện onclick
+        loginLink.onclick = function () {
+            if (loginPopup.style.display === "none") {
+                loginPopup.style.display = "block";
+            } else {
+                loginPopup.style.display = "none";
+            }
+        };
+
+
+       
+
+        // =============================================
+        var closeButton = document.getElementById("closeButton");
+
+        loginLink.onclick = function () {
+            loginPopup.style.display = "block";
+        };
+
+        closeButton.onclick = function () {
+            loginPopup.style.display = "none";
+        };
+
+
+        function toggleDropdown(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a> khi được nhấp vào
+
+            var dropdown = event.target.nextElementSibling; // Lấy phần tử anh em tiếp theo của thẻ <a> (trong trường hợp này là <ul>)
+
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleMobileMenu() {
+            var mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    @*@await RenderSectionAsync("Scripts", required: false)*@
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
